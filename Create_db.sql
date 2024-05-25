@@ -149,6 +149,23 @@ CREATE TABLE IF NOT EXISTS `fitness`.`equipment` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `fitness`.`customer_log`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `fitness`.`customer_log` (
+  `log_id` INT NOT NULL AUTO_INCREMENT,
+  `customer_id` INT NOT NULL,
+  `action` VARCHAR(45) NOT NULL,
+  `old_first_name` VARCHAR(45) NULL,
+  `new_first_name` VARCHAR(45) NULL,
+  `old_last_name` VARCHAR(45) NULL,
+  `new_last_name` VARCHAR(45) NULL,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`log_id`))
+ENGINE = InnoDB;
+
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
